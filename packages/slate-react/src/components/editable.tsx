@@ -1179,7 +1179,7 @@ export const isTargetInsideVoid = (
   target: EventTarget | null
 ): boolean => {
   const slateNode =
-    hasTarget(editor, target) && ReactEditor.toSlateNode(editor, target)
+    hasTarget(editor, target) && ReactEditor.toSlateNode(editor, target.closest('[data-slate-void]'))
   return Editor.isVoid(editor, slateNode)
 }
 
